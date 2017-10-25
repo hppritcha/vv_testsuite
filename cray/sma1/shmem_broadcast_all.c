@@ -45,6 +45,7 @@
 #include <stdlib.h>
 #include <mpp/shmem.h>
 #include <mpp/shmemx.h>
+#include "config.h"
 
 #define MAX_SIZE 40
 #define IMAX 5
@@ -207,7 +208,7 @@ int main(int argc, char **argv)
   shmem_free(srce_long);  shmem_free(targ_long);
   shmem_free(srce_double);  shmem_free(targ_double);
 
-#ifndef OPENSHMEM
+#if OSHMX_HAVE_BROADCAST
 #ifdef SHMEM_C_GENERIC_32
 
 /*  shmemx_broadcast (GENERIC 32) test   */

@@ -39,6 +39,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpp/shmem.h>
+#include "config.h"
 
 #define MAX_SIZE 1024
 #ifdef QUICK_TEST
@@ -112,7 +113,7 @@ int main(int argc, char **argv)
          targ_int[j] = (int)(iter*10000+elements[i]*100+my_pe+j);
      shmem_barrier_all();
      if ( (my_pe % 2) == 0 ) {
-#ifndef OPENSHMEM
+#if OSHMX_HAVE_PUT_NB
        shmemx_put32_nb(targ_int,srce_int,elements[i],my_pe+1,NULL);
 #else
        shmem_put32_nbi(targ_int,srce_int,elements[i],my_pe+1);

@@ -162,7 +162,7 @@ int main(int argc, char **argv)
        }
      shmem_barrier_all();
      if ( (my_pe % 2) == 0 ) {
-#ifndef OPENSHMEM
+#if OSHMX_HAVE_PUT_NB
        shmemx_int_put_nb(targ_int,srce_int,elements[i],my_pe+1,NULL);
        shmemx_long_put_nb(targ_long,srce_long,elements[i],my_pe+1,NULL);
        shmemx_float_put_nb(targ_float,srce_float,elements[i],my_pe+1,NULL);

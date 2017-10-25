@@ -40,10 +40,6 @@ config.status
 configure
 libtool
 
-libfabric.spec
-libfabric.pc
-libfabric.map
-
 config/ar-lib
 config/compile
 config/config.guess
@@ -56,11 +52,39 @@ config/lt*.m4
 config/missing
 config/test-driver
 
-util/fi_info
-util/fi_strerror
-util/fi_pingpong
+cray/sma1/align
+cray/sma1/all_and_int_ext
+cray/sma1/all_max_double_ext
+cray/sma1/all_min_double_ext
+cray/sma1/all_or_int_ext
+cray/sma1/all_prod_double_ext
+cray/sma1/all_sum_double_ext
+cray/sma1/all_xor_int_ext
+cray/sma1/shmalloc_loop
+cray/sma1/shmalloc_shrealloc
+cray/sma1/shmem_both_put_nb_size
+cray/sma1/shmem_broadcast_all
+cray/sma1/shmem_finc_cswap
+cray/sma1/shmem_finc_fadd
+cray/sma1/shmem_finc_only
+cray/sma1/shmem_finc_swap
+cray/sma1/shmem_global_exit
+cray/sma1/shmem_lock_set_clear
+cray/sma1/shmem_lock_test_clear
+cray/sma1/shmem_long_finc_only
+cray/sma1/shmem_long_finc_swap
+cray/sma1/shmem_num_get
+cray/sma1/shmem_num_put
+cray/sma1/shmem_num_put_nb
+cray/sma1/shmem_num_put_nb_size
+cray/sma1/shmem_num_put_size
+cray/sma1/shmem_swap_only
+cray/sma1/shmem_type_g
+cray/sma1/shmem_type_get
+cray/sma1/shmem_type_p
+cray/sma1/shmem_type_put
+cray/sma1/shmem_type_put_nb
 
-prov/*/*.spec
 
 .vs
 *.trs

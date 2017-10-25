@@ -11,11 +11,19 @@ AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.11 dist-bzip2 foreign -Wall -Werror subdir-objects parallel-tests tar-ustar])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
+AC_ARG_WITH([oshrun-launcher],
+    [AC_HELP_STRING([--with-oshrun-launcher],
+                    [Set launcher to be used by oshrun launcher wrapper. (default: auto)])])
+
 # Checks for oshcc
 AC_PROG_CC([oshcc])
 
 # Checks for oshCC
 AC_PROG_CXX([oshCC])
+
+# Checks for oshrun
+AC_CHECK_PROG([OSHRUN], [oshrun], 
+              [TEST_RUNNER='oshrun -n $(NPROCS)'])
 
 # Checks for libraries.
 #AC_SEARCH_LIBS([sqrt], [m])

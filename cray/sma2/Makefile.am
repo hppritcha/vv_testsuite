@@ -28,6 +28,8 @@ all_prod_alltypes_SOURCES = all_prod_alltypes.cpp
 all_sum_alltypes_SOURCES = all_sum_alltypes.cpp
 all_xor_alltypes_SOURCES = all_xor_alltypes.cpp
 
+bin_PROGRAMS = $(check_PROGRAMS)
+
 TESTS = $(check_PROGRAMS)
 
 NPROCS ?= 2

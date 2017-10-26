@@ -45,6 +45,8 @@ check_PROGRAMS = \
 	shmem_type_put \
 	shmem_type_put_nb
 
+bin_PROGRAMS = $(check_PROGRAMS)
+
 TESTS = $(check_PROGRAMS)
 
 NPROCS ?= 2

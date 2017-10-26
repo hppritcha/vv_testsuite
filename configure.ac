@@ -22,8 +22,10 @@ AC_PROG_CC([oshcc])
 AC_PROG_CXX([oshCC])
 
 # Checks for oshrun
-AC_CHECK_PROG([OSHRUN], [oshrun], 
-              [TEST_RUNNER='oshrun -n $(NPROCS)'])
+AC_CHECK_PROG([OSHRUN], [oshrun], [oshrun])
+AS_IF([test "$OSHRUN" != ""],
+     [ TEST_RUNNER='oshrun -np $(NPROCS)'],[echo "nothing to set"])
+AC_SUBST(TEST_RUNNER)
 
 # Checks for libraries.
 #AC_SEARCH_LIBS([sqrt], [m])

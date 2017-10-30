@@ -15,8 +15,18 @@ AC_ARG_WITH([oshrun-launcher],
     [AC_HELP_STRING([--with-oshrun-launcher],
                     [Set launcher to be used by oshrun launcher wrapper. (default: auto)])])
 
+AC_ARG_ENABLE([fortran],
+    [AC_HELP_STRING([--disable-fortran],
+                    [Disable building the Fortran bindings (default: enabled)])])
+
 # Checks for oshcc
 AC_PROG_CC([oshcc])
+# Checks for oshfort
+AS_IF([test "$enable_fortran" != "no"],
+      [PAC_PROG_FC_CRAY_POINTER([FC=oshfort
+                                 FCFLAGS="$FCFLAGS $CRAYPTR_FCFLAGS"],
+                                [FC=])],
+      [FC=])
 
 # Checks for oshCC
 AC_PROG_CXX([oshCC])
@@ -51,6 +61,25 @@ AS_IF([test "$oshmx_have_broadcast" = "yes"],
 
 AM_CONDITIONAL([OSHM], [test "$oshm_library" = "yes"])
 AM_CONDITIONAL([HAVE_CXX], [test "$enable_cxx" != "no" ])
+AM_CONDITIONAL([HAVE_FORTRAN], [test "$FC" != ""])
 
-AC_CONFIG_FILES([Makefile cray/Makefile cray/sma1/Makefile cray/sma2/Makefile])
+AC_CONFIG_FILES([Makefile
+                 cray/Makefile
+                 cray/sma1/Makefile
+                 uh/Makefile
+                 uh/error_tests/Makefile
+                 uh/error_tests/Fortran/atomic/Makefile
+                 uh/error_tests/Fortran/Makefile
+                 uh/error_tests/Fortran/transfer/Makefile
+                 uh/feature_tests/Makefile
+                 uh/feature_tests/C/Makefile
+                 uh/feature_tests/Fortran/Makefile
+                 uh/feature_tests/Fortran/accessibility/Makefile
+                 uh/feature_tests/Fortran/alloc/Makefile
+                 uh/feature_tests/Fortran/atomic/Makefile
+                 uh/feature_tests/Fortran/broadcast/Makefile
+                 uh/feature_tests/Fortran/collect/Makefile
+                 uh/feature_tests/Fortran/reductions/Makefile
+                 uh/feature_tests/Fortran/transfer/Makefile
+])
 AC_OUTPUT

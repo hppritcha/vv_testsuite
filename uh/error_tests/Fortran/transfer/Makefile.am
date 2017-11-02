@@ -23,14 +23,6 @@ check_PROGRAMS = \
 	test_shmem_get_05_int4 \
 	test_shmem_get_05_logical \
 	test_shmem_get_05_real4 \
-	test_shmem_iget_04_double \
-	test_shmem_iget_04_int4 \
-	test_shmem_iget_04_logical \
-	test_shmem_iget_04_real4 \
-	test_shmem_iget_05_double \
-	test_shmem_iget_05_int4 \
-	test_shmem_iget_05_logical \
-	test_shmem_iget_05_real4 \
 	test_shmem_iput_04_double \
 	test_shmem_iput_04_int4 \
 	test_shmem_iput_04_logical \
@@ -39,6 +31,14 @@ check_PROGRAMS = \
 	test_shmem_iput_05_int4 \
 	test_shmem_iput_05_logical \
 	test_shmem_iput_05_real4 \
+	test_shmem_iget_04_double \
+	test_shmem_iget_04_int4 \
+	test_shmem_iget_04_logical \
+	test_shmem_iget_04_real4 \
+	test_shmem_iget_05_double \
+	test_shmem_iget_05_int4 \
+	test_shmem_iget_05_logical \
+	test_shmem_iget_05_real4 \
 	test_shmem_put_04_char \
 	test_shmem_put_04_double \
 	test_shmem_put_04_int4 \
@@ -52,7 +52,55 @@ check_PROGRAMS = \
 
 bin_PROGRAMS = $(check_PROGRAMS)
 
-TESTS = $(check_PROGRAMS)
+TESTS =  \
+	test_shmem_get_04_char \
+	test_shmem_get_04_double \
+	test_shmem_get_04_int4 \
+	test_shmem_get_04_logical \
+	test_shmem_get_04_real4 \
+	test_shmem_get_05_char \
+	test_shmem_get_05_double \
+	test_shmem_get_05_int4 \
+	test_shmem_get_05_logical \
+	test_shmem_get_05_real4 \
+	test_shmem_iput_04_double \
+	test_shmem_iput_04_int4 \
+	test_shmem_iput_04_logical \
+	test_shmem_iput_04_real4 \
+	test_shmem_iput_05_double \
+	test_shmem_iput_05_int4 \
+	test_shmem_iput_05_logical \
+	test_shmem_iput_05_real4 \
+	test_shmem_iget_04_double \
+	test_shmem_iget_04_int4 \
+	test_shmem_iget_04_logical \
+	test_shmem_iget_04_real4 \
+	test_shmem_iget_05_double \
+	test_shmem_iget_05_int4 \
+	test_shmem_iget_05_logical \
+	test_shmem_iget_05_real4 \
+	test_shmem_put_04_char \
+	test_shmem_put_04_double \
+	test_shmem_put_04_int4 \
+	test_shmem_put_04_logical \
+	test_shmem_put_04_real4 \
+	test_shmem_put_05_char \
+	test_shmem_put_05_double \
+	test_shmem_put_05_int4 \
+	test_shmem_put_05_logical \
+	test_shmem_put_05_real4
+
+XFAIL_TESTS = \
+	test_shmem_iget_04_double \
+	test_shmem_iget_04_int4 \
+	test_shmem_iget_04_logical \
+	test_shmem_iget_04_real4 \
+	test_shmem_put_04_char \
+	test_shmem_put_04_double \
+	test_shmem_put_04_int4 \
+	test_shmem_put_04_logical \
+	test_shmem_put_04_real4
+
 
 NPROCS ?= 2
 LOG_COMPILER = $(TEST_RUNNER)

@@ -33,8 +33,12 @@ check_PROGRAMS = \
 bin_PROGRAMS = $(check_PROGRAMS)
 
 TESTS = $(check_PROGRAMS)
+XFAIL_TESTS = test_shmem_collect_04_int4 \
+		test_shmem_collect_04_int8 \
+		test_shmem_fcollect_04_int4 \
+		test_shmem_fcollect_04_int8
 
-NPROCS ?= 2
+NPROCS ?= 3
 LOG_COMPILER = $(TEST_RUNNER)
 
 test_shmem_collect_01_int4_SOURCES = test_shmem_collect_01_int4.f90

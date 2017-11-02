@@ -34,7 +34,27 @@ check_PROGRAMS = \
 
 bin_PROGRAMS = $(check_PROGRAMS)
 
-TESTS = $(check_PROGRAMS)
+TESTS =  \
+	test_shmem_accessible \
+	test_shmem_atomics \
+	test_shmem_barrier \
+	test_shmem_broadcast \
+	test_shmem_collects \
+	test_shmem_finalize \
+	test_shmem_get \
+	test_shmem_get_globals \
+	test_shmem_get_shmem_malloc \
+	test_shmem_lock \
+	test_shmem_put \
+	test_shmem_put_globals \
+	test_shmem_put_shmem_malloc \
+	test_shmem_query \
+	test_shmem_reduction \
+	test_shmem_synchronization \
+	test_shmem_zero_get \
+	test_shmem_zero_put
+
+XFAIL_TESTS = test_shmem_global_exit
 
 NPROCS ?= 2
 LOG_COMPILER = $(TEST_RUNNER)

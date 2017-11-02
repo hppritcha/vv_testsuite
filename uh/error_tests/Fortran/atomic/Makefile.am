@@ -32,7 +32,41 @@ check_PROGRAMS = \
 
 bin_PROGRAMS = $(check_PROGRAMS)
 
-TESTS = $(check_PROGRAMS)
+TESTS = \
+	test_shmem_add_04_int4 \
+	test_shmem_add_04_int8 \
+	test_shmem_cswap_04_int4 \
+	test_shmem_cswap_04_int8 \
+	test_shmem_finc_04_int4 \
+	test_shmem_finc_04_int8 \
+	test_shmem_finc_05_int4 \
+	test_shmem_finc_05_int8 \
+	test_shmem_inc_04_int4 \
+	test_shmem_inc_04_int8 \
+	test_shmem_inc_05_int4 \
+	test_shmem_inc_05_int8 \
+	test_shmem_swap_04_int4 \
+	test_shmem_swap_04_int8 \
+	test_shmem_swap_05_int4 \
+	test_shmem_swap_05_int8
+
+XFAIL_TESTS = \
+	test_shmem_add_04_int4 \
+	test_shmem_add_04_int8 \
+	test_shmem_cswap_04_int4 \
+	test_shmem_cswap_04_int8 \
+	test_shmem_finc_04_int4 \
+	test_shmem_finc_04_int8 \
+	test_shmem_finc_05_int4 \
+	test_shmem_finc_05_int8 \
+	test_shmem_inc_04_int4 \
+	test_shmem_inc_04_int8 \
+	test_shmem_inc_05_int4 \
+	test_shmem_inc_05_int8 \
+	test_shmem_swap_04_int4 \
+	test_shmem_swap_04_int8 \
+	test_shmem_swap_05_int4 \
+	test_shmem_swap_05_int8
 
 NPROCS ?= 2
 LOG_COMPILER = $(TEST_RUNNER)

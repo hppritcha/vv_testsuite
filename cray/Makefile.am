@@ -11,5 +11,5 @@
 # information, see the LICENSE file in the top level directory of the
 # distribution.
 
-SUBDIRS = sma1
+SUBDIRS = sma1 sma2
 

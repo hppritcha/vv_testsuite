@@ -66,6 +66,7 @@ AM_CONDITIONAL([HAVE_FORTRAN], [test "$FC" != ""])
 AC_CONFIG_FILES([Makefile
                  cray/Makefile
                  cray/sma1/Makefile
+                 cray/sma2/Makefile
                  uh/Makefile
                  uh/error_tests/Makefile
                  uh/error_tests/Fortran/atomic/Makefile

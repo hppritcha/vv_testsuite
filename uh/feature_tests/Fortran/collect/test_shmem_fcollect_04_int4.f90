@@ -7,6 +7,8 @@
 !   by Silicon Graphics International Corp. (SGI) The OpenSHMEM API
 !   (shmem) is released by Open Source Software Solutions, Inc., under an
 !   agreement with Silicon Graphics International Corp. (SGI).
+! Copyright (c) 2017 Los Alamos National Security, LLC. All rights
+!    reserved.
 !
 ! All rights reserved.
 !
@@ -41,6 +43,7 @@
 !
 
 program test_shmem_collects
+  use alarm_glue
   implicit none
   include 'shmem.fh'
 
@@ -66,6 +69,7 @@ program test_shmem_collects
   integer              :: collect_nelems
   integer              :: errcode
   integer, parameter   :: abort = 0
+  integer              :: ret = 0
 
 ! Function definitions
   integer              :: shmem_my_pe, shmem_n_pes
@@ -75,6 +79,8 @@ program test_shmem_collects
 
   npes = shmem_n_pes()
   me   = shmem_my_pe()
+
+  call alarm_it()
 
   pSync(:) = SHMEM_SYNC_VALUE
 
@@ -133,6 +139,7 @@ program test_shmem_collects
         write(*,*) "Test shmem_collect32: Passed"
       else
         write(*,*) "Test shmem_collect32: Failed"
+        ret = -1
       end if
     end if
 
@@ -143,8 +150,10 @@ program test_shmem_collects
 
   else
     write (*,*) "This test requires ", min_npes, " or more PEs."
+    ret = 77
   end if
 
   call shmem_finalize()
+  stop ret
 
 end program test_shmem_collects

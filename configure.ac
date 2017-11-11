@@ -41,7 +41,7 @@ AC_SUBST(TEST_RUNNER)
 #AC_SEARCH_LIBS([sqrt], [m])
 
 # Checks for header files.
-AC_CHECK_HEADERS([stdlib.h string.h sys/time.h unistd.h])
+AC_CHECK_HEADERS([stdlib.h string.h sys/time.h unistd.h stdbool.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_INLINE

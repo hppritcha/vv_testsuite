@@ -82,5 +82,7 @@ AC_CONFIG_FILES([Makefile
                  uh/feature_tests/Fortran/collect/Makefile
                  uh/feature_tests/Fortran/reductions/Makefile
                  uh/feature_tests/Fortran/transfer/Makefile
+                 uh/performance_tests/Makefile
+                 uh/performance_tests/micro_benchmarks/Makefile
 ])
 AC_OUTPUT

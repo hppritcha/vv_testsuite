@@ -14,5 +14,5 @@
 # information, see the LICENSE file in the top level directory of the
 # distribution.
 
-SUBDIRS = error_tests feature_tests
+SUBDIRS = error_tests feature_tests performance_tests
 

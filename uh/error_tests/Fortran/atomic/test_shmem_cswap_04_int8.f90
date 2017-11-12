@@ -53,6 +53,7 @@ program test_shmem_atomics
   integer*8                 :: swapped_val, new_val
 
   integer                   :: me, npes
+  integer                   :: ret = 0
 
   ! Function definitions
   integer                   :: shmem_my_pe, shmem_n_pes
@@ -104,6 +105,7 @@ program test_shmem_atomics
         write (*,*) "Test 04 shmem_int8_cswap: Passed"
       else
         write (*,*) "Test 04 shmem_int8_cswap: Failed"
+        ret = -1
       end if
     end if
 
@@ -111,8 +113,10 @@ program test_shmem_atomics
 
   else
     write (*,*) "Number of PEs must be > 1 to test shmem atomics, test skipped"
+    ret = 77
   end if
 
   call shmem_finalize()
+  stop ret
 
 end program test_shmem_atomics

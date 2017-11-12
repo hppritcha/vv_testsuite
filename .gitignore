@@ -373,12 +373,6 @@ uh/error_tests/Fortran/transfer/test_shmem_iget_04_int4
 uh/error_tests/Fortran/transfer/test_shmem_iget_04_logical
 uh/error_tests/Fortran/transfer/test_shmem_iget_04_real4
 
-
-
-
-
-
-
-
 .vs
 *.trs
+*.mod

@@ -47,6 +47,7 @@ program test_shmem_get
   integer, parameter :: N = 7
 
   integer          ::  i
+  integer          ::  ret = 0
   integer          ::  nextpe
   integer          ::  me, npes
   logical          ::  success1
@@ -98,6 +99,7 @@ program test_shmem_get
 
       if (success1 .eqv. .TRUE.) then
         write(*,*) "Test shmem_double_get: Failed"
+        ret = -1
       else
         write(*,*) "Test shmem_double_get: Passed"
       end if
@@ -109,8 +111,11 @@ program test_shmem_get
 
   else
     write(*,*) "Number of PEs must be > 1 to test shmem get, test skipped"
+    ret = 77
   end if
 
   call shmem_finalize()
+
+  stop ret
 
 end program

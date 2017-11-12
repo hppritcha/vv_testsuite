@@ -47,6 +47,7 @@ program test_shmem_iput
   integer, parameter :: N = 7
 
   integer                 ::  i
+  integer                 ::  ret = 0
   integer                 ::  nextpe
   integer                 ::  me, npes
   logical                 ::  success
@@ -99,6 +100,7 @@ program test_shmem_iput
         write(*,*) "Test shmem_logical_iput: Passed"
       else
         write(*,*) "Test shmem_logical_iput: Failed"
+        ret = -1
       end if
     end if
 
@@ -108,8 +110,11 @@ program test_shmem_iput
 
   else
     write(*,*) "Number of PEs must be > 1 to test shmem get, test skipped"
+    ret = 77
   end if
 
   call shmem_finalize()
+
+  stop ret
 
 end program

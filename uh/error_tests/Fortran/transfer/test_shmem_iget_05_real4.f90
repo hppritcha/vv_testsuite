@@ -47,6 +47,7 @@ program test_shmem_iget
   integer, parameter :: N = 10
 
   integer            ::  i
+  integer            ::  ret = 0
 
   integer            ::  me, npes
   logical            ::  success
@@ -96,6 +97,7 @@ program test_shmem_iget
         write(*,*) "Test shmem_real_iget: Passed"
       else
         write(*,*) "Test shmem_real_iget: Failed"
+        ret = -1
       end if
     end if
 
@@ -105,8 +107,11 @@ program test_shmem_iget
 
   else
     write(*,*) "Number of PEs must be > 1 to test shmem get, test skipped"
+    ret = 77
   end if
 
   call shmem_finalize()
+
+  stop ret
 
 end program

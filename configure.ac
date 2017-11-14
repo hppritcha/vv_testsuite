@@ -21,10 +21,11 @@ AC_ARG_ENABLE([fortran],
 
 # Checks for oshcc
 AC_PROG_CC([oshcc])
+
 # Checks for oshfort
+AC_PROG_FC([oshfort ftn])
 AS_IF([test "$enable_fortran" != "no"],
-      [PAC_PROG_FC_CRAY_POINTER([FC=oshfort
-                                 FCFLAGS="$FCFLAGS $CRAYPTR_FCFLAGS"],
+      [PAC_PROG_FC_CRAY_POINTER([FCFLAGS="$FCFLAGS $CRAYPTR_FCFLAGS"],
                                 [FC=])],
       [FC=])
 
@@ -47,7 +48,11 @@ AC_CHECK_HEADERS([stdlib.h string.h sys/time.h unistd.h stdbool.h])
 AC_C_INLINE
 
 # Checks for library functions.
-AC_CHECK_FUNC([shmem_barrier_all], [oshm_library=yes])
+
+# every OpenSHMEM library has to define shmem_barrier_all
+AC_CHECK_FUNC([shmem_barrier_all],
+              [oshm_library=yes],
+              [AC_MSG_ERROR([Can't find an OpenSHMEM library!])])
 AC_CHECK_FUNC([shmemx_int_put_nb], [oshmx_have_put_nb=yes])
 AC_CHECK_FUNC([shmemx_broadcast], [oshmx_have_broadcast=yes])
 

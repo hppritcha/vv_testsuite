@@ -60,8 +60,6 @@ program test_shmem_reduction
   logical              :: success
   character*(*), parameter :: TEST_NAME = 'shmem_and'
 
-  ! Function definitions
-  integer                   :: shmem_my_pe, shmem_n_pes
   integer                   :: ret = 0
 
   success = .TRUE.

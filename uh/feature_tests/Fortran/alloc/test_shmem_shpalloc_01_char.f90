@@ -59,9 +59,6 @@ program test_shmem_shpalloc
 
   character*(*), parameter  :: TEST_NAME='shpalloc'
 
-  ! Function return value types
-  integer            :: shmem_my_pe, shmem_n_pes
-
   call shmem_init()
 
   me = shmem_my_pe()

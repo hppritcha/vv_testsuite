@@ -54,11 +54,6 @@ program test_shmem_get
   character          :: dest(N)
   character          , save :: src(N)
 
-
-
-! Function definitions
-  integer                   :: shmem_my_pe, shmem_n_pes
-
   call shmem_init()
 
   me   = shmem_my_pe();

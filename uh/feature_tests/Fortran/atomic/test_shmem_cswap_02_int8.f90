@@ -54,10 +54,6 @@ program test_shmem_atomics
 
   integer                   :: me, npes
 
-  ! Function definitions
-  integer                   :: shmem_my_pe, shmem_n_pes
-  integer*8                  :: shmem_int8_cswap
-
   common /globalvars/ dest
 
   call shmem_init()

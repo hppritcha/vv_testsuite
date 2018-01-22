@@ -61,9 +61,6 @@ program test_shmem_reduction
   logical              :: success
   character*(*), parameter :: TEST_NAME = 'shmem_or'
 
-  ! Function definitions
-  integer                   :: shmem_my_pe, shmem_n_pes
-
   success = .TRUE.
 
   call shmem_init()

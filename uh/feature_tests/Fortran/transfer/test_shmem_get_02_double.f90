@@ -54,11 +54,6 @@ program test_shmem_get
   double precision          :: dest(N)
   double precision          :: src(N)
 
-
-
-! Function definitions
-  integer                   :: shmem_my_pe, shmem_n_pes
-
   common /globalvars/ src
 
   call shmem_init()

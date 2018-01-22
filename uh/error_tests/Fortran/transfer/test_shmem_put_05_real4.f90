@@ -85,7 +85,7 @@ program test_shmem_put
 
     if(me .eq. 0) then
       do i = 1, N, 1
-        if(dest(i) .ne. REAL(54321 + i, KIND=4)) then
+        if(dest(i) .eq. REAL(54321 + i, KIND=4)) then
           success1 = .FALSE.
         end if
       end do

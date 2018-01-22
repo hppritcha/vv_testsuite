@@ -85,7 +85,7 @@ program test_shmem_put
 
     if(me .eq. 0) then
       do i = 1, N, 1
-        if(dest(i) .neqv. .TRUE.) then
+        if(dest(i) .eqv. .TRUE.) then
           success1 = .FALSE.
         end if
       end do

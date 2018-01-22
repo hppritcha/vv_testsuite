@@ -85,7 +85,7 @@ program test_shmem_put
 
     if(me .eq. 0) then
       do i = 1, N, 1
-        if(dest(i) .ne. 54321.67 + DBLE(i)) then
+        if(dest(i) .eq. 54321.67 + DBLE(i)) then
           success1 = .FALSE.
         end if
       end do

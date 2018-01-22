@@ -48,7 +48,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpp/shmem.h>
+#if HAVE_MPP_SHMEMX_H
 #include <mpp/shmemx.h>
+#endif
 #include "config.h"
 
 #define MAX_SIZE 100000

@@ -48,6 +48,9 @@ program test_shmem_accessible
   character            :: remote_dest(2)
 
   integer             :: me, npes
+  ! SHMEM function definitions
+  integer             :: shmem_my_pe, shmem_n_pes
+  ! --
 
   call shmem_init()
   me   = shmem_my_pe()

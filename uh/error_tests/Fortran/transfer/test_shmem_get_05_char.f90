@@ -56,6 +56,11 @@ program test_shmem_get
 
   character          :: src(N)
 
+
+
+! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+
   common /globalvars/ src
 
   call shmem_init()

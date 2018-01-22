@@ -55,6 +55,10 @@ program test_shmem_atomics
   integer                   :: me, npes
   integer                   :: ret = 0
 
+  ! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+  integer*8                  :: shmem_int8_swap
+
   call shmem_init()
   me = shmem_my_pe()
   npes = shmem_n_pes()

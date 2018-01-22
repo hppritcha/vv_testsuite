@@ -54,6 +54,11 @@ program test_shmem_iput
   logical                :: dest(N)
   logical                :: src(N)
 
+
+
+! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+
   common /globalvars/ dest
 
   call shmem_init()

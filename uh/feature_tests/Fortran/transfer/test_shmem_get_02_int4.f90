@@ -54,6 +54,11 @@ program test_shmem_get
   integer*4          :: dest(N)
   integer*4          :: src(N)
 
+
+
+! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+
   common /globalvars/ src
 
   call shmem_init()

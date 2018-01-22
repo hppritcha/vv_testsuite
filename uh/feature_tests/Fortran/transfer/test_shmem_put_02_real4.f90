@@ -55,6 +55,11 @@ program test_shmem_put
 
   real*4                :: src(N)
 
+
+
+! Function definitions
+  integer                 :: shmem_my_pe, shmem_n_pes
+
   common /globalvars/ dest
 
   call shmem_init()

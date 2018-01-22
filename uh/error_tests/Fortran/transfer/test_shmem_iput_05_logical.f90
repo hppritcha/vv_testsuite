@@ -57,6 +57,10 @@ program test_shmem_iput
   logical                :: src(N)
 
 
+
+! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+
   call shmem_init()
   me   = shmem_my_pe();
   npes = shmem_n_pes();

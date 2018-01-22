@@ -54,6 +54,11 @@ program test_shmem_get
   real*4          :: dest(N)
   real*4          , save :: src(N)
 
+
+
+! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+
   call shmem_init()
 
   me   = shmem_my_pe();

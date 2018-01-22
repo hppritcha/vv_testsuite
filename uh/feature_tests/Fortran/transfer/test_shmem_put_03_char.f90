@@ -60,6 +60,10 @@ program test_shmem_put
   integer                 :: errcode
   integer, parameter  :: abort = 0
 
+
+! Function definitions
+  integer                 :: shmem_my_pe, shmem_n_pes
+
   call shmem_init()
   me   = shmem_my_pe()
   npes = shmem_n_pes()

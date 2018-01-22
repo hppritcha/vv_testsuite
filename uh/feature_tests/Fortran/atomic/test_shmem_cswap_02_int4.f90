@@ -54,6 +54,10 @@ program test_shmem_atomics
 
   integer                   :: me, npes
 
+  ! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+  integer*4                  :: shmem_int4_cswap
+
   common /globalvars/ dest
 
   call shmem_init()

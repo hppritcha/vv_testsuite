@@ -61,6 +61,9 @@ program test_shmem_broadcast
   integer            :: me, npes
   integer            :: ret = 0
 
+! Function definitions
+  integer            :: shmem_my_pe, shmem_n_pes
+
   common /globalvars/ dest, src
 
   call shmem_init()

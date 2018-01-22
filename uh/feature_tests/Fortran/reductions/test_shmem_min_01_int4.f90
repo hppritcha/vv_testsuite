@@ -61,6 +61,9 @@ program test_shmem_reduction
   character*(*), parameter :: TEST_NAME = 'shmem_min'
   integer              :: ret = 0
 
+  ! Function definitions
+  integer                   :: shmem_my_pe, shmem_n_pes
+
   success = .TRUE.
 
   call shmem_init()

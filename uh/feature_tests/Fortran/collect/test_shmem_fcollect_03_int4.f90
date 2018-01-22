@@ -70,6 +70,10 @@ program test_shmem_collects
   integer, parameter   :: abort = 0
   integer              :: ret = 0
 
+! Function definitions
+  integer              :: shmem_my_pe, shmem_n_pes
+
+
   call shmem_init()
 
   npes = shmem_n_pes()

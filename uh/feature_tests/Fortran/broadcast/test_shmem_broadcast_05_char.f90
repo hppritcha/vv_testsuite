@@ -8,8 +8,8 @@
 !   (shmem) is released by Open Source Software Solutions, Inc., under an
 !   agreement with Silicon Graphics International Corp. (SGI).
 ! Copyright (c) 2015 Intel Corporation
-! Copyright (c) 2017 Los Alamos National Security, LLC. All rights
-!    reserved.
+! Copyright (c) 2017 - 2018  Los Alamos National Security, LLC.
+!   All rights reserved.
 !
 ! All rights reserved.
 !
@@ -86,9 +86,7 @@ program test_shmem_broadcast
 
     call shmem_barrier_all()
 
-    if(me .ne. 0) then
-      call shmem_broadcast4(dest, src, nelems / 4, 0, 0, 0, npes, pSync)
-    end if
+    call shmem_broadcast4(dest, src, nelems, 0, 0, 0, npes, pSync)
 
     call shmem_barrier_all()
 

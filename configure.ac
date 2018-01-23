@@ -69,9 +69,6 @@ AM_CONDITIONAL([HAVE_CXX], [test "$enable_cxx" != "no" ])
 AM_CONDITIONAL([HAVE_FORTRAN], [test "$FC" != ""])
 
 AC_CONFIG_FILES([Makefile
-                 cray/Makefile
-                 cray/sma1/Makefile
-                 cray/sma2/Makefile
                  uh/Makefile
                  uh/error_tests/Makefile
                  uh/error_tests/Fortran/atomic/Makefile
@@ -89,7 +86,5 @@ AC_CONFIG_FILES([Makefile
                  uh/feature_tests/Fortran/transfer/Makefile
                  uh/performance_tests/Makefile
                  uh/performance_tests/micro_benchmarks/Makefile
-                 sandia-shmem/Makefile
-                 sandia-shmem/unit/Makefile
 ])
 AC_OUTPUT

@@ -57,6 +57,7 @@ uh/error_tests/Fortran/**/*
 uh/feature_tests/Fortran/**/*
 uh/feature_tests/C/*
 uh/performance_tests/micro_benchmarks/*
+sos/unit/*
 
 .vs
 *.trs

@@ -1,0 +1,159 @@
+# -*- Makefile -*-
+#
+# Copyright 2011 Sandia Corporation. Under the terms of Contract
+# DE-AC04-94AL85000 with Sandia Corporation, the U.S.  Government
+# retains certain rights in this software.
+#
+# Copyright (c) 2017 Intel Corporation. All rights reserved.
+# This software is available to you under the BSD license.
+#
+# This file is part of the Sandia OpenSHMEM software package. For license
+# information, see the LICENSE file in the top level directory of the
+# distribution.
+
+check_PROGRAMS = \
+	hello \
+	pi \
+	micro_unit_shmem \
+	circular_shift \
+	accessible_ping \
+	max_reduction \
+	big_reduction \
+	to_all \
+	strided_put \
+	barrier \
+	bcast \
+	put1 \
+	get1 \
+	swap1 \
+	ping \
+	pingpong \
+	shmalloc \
+	shmem_calloc \
+	shrealloc \
+	shmemalign \
+	get_g \
+	iput32 \
+	iput64 \
+	iput128 \
+	iput_short \
+	iput_double \
+	iput_float \
+	iput_long \
+	iput_longdouble \
+	iput_longlong \
+	sping \
+	pingpong-short \
+	ipgm \
+	iput-iget \
+	swapm \
+	cswap \
+	waituntil \
+	atomic_inc \
+	set_lock \
+	test_lock \
+	test_lock_cswap \
+	fcollect64 \
+	bigput \
+	bigget \
+	ns \
+	bcast_flood \
+	lfinc \
+	shmem_info \
+	global_exit \
+	asym_alloc \
+	set_fetch \
+	alltoall \
+	alltoalls \
+	c11_test_shmem_g \
+	c11_test_shmem_get \
+	c11_test_shmem_p \
+	c11_test_shmem_put \
+	c11_test_shmem_atomic_fetch \
+	c11_test_shmem_atomic_set \
+	c11_test_shmem_atomic_add \
+	c11_test_shmem_atomic_inc \
+	c11_test_shmem_atomic_and \
+	c11_test_shmem_atomic_or \
+	c11_test_shmem_atomic_xor \
+	c11_test_shmem_atomic_swap \
+	c11_test_shmem_atomic_cswap \
+	c11_test_shmem_wait_until \
+	c11_test_shmem_test \
+	get_nbi \
+	put_nbi \
+	rma_coverage \
+	collect \
+	repeated_barriers \
+	repeated_syncs \
+	broadcast_active_set \
+	reduce_active_set \
+	collect_active_set \
+	pcontrol \
+	atomic_bitwise \
+	nop_collectives \
+	self_collectives \
+	zero_comm \
+	sync-size \
+	shmem_ctx_pipelined_reduce \
+	many-ctx \
+	shmem_test
+
+if HAVE_CXX
+check_PROGRAMS += \
+	cxx_test_shmem_complex \
+	cxx_test_shmem_g \
+	cxx_test_shmem_get \
+	cxx_test_shmem_p \
+	cxx_test_shmem_put \
+	cxx_test_shmem_atomic_fetch \
+	cxx_test_shmem_atomic_set \
+	cxx_test_shmem_atomic_add \
+	cxx_test_shmem_atomic_inc \
+	cxx_test_shmem_atomic_and \
+	cxx_test_shmem_atomic_or \
+	cxx_test_shmem_atomic_xor \
+	cxx_test_shmem_atomic_swap \
+	cxx_test_shmem_atomic_cswap \
+	cxx_test_shmem_wait_until \
+	cxx_test_shmem_test
+endif
+
+if HAVE_FORTRAN
+check_PROGRAMS += \
+     hello_f \
+     shmem_info_f \
+     complex_reductions_f \
+     set_fetch_f
+endif
+
+TESTS = $(check_PROGRAMS)
+
+bin_PROGRAMS= $(check_PROGRAMS)
+
+NPROCS ?= 2
+LOG_COMPILER = $(TEST_RUNNER)
+
+# Fortran Tests (only .c tests use automatic _SOURCES)
+hello_f_SOURCES = hello_f.f90
+complex_reductions_f_SOURCES = complex_reductions_f.f90
+shmem_info_f_SOURCES = shmem_info_f.f90
+set_fetch_f_SOURCES = set_fetch_f.f90
+
+# C++ Tests
+cxx_test_shmem_complex_SOURCES = cxx_test_shmem_complex.cpp
+cxx_test_shmem_g_SOURCES = cxx_test_shmem_g.cpp
+cxx_test_shmem_get_SOURCES = cxx_test_shmem_get.cpp
+cxx_test_shmem_p_SOURCES = cxx_test_shmem_p.cpp
+cxx_test_shmem_put_SOURCES = cxx_test_shmem_put.cpp
+cxx_test_shmem_atomic_fetch_SOURCES = cxx_test_shmem_atomic_fetch.cpp
+cxx_test_shmem_atomic_set_SOURCES = cxx_test_shmem_atomic_set.cpp
+cxx_test_shmem_atomic_add_SOURCES = cxx_test_shmem_atomic_add.cpp
+cxx_test_shmem_atomic_inc_SOURCES = cxx_test_shmem_atomic_inc.cpp
+cxx_test_shmem_atomic_and_SOURCES = cxx_test_shmem_atomic_and.cpp
+cxx_test_shmem_atomic_or_SOURCES = cxx_test_shmem_atomic_or.cpp
+cxx_test_shmem_atomic_xor_SOURCES = cxx_test_shmem_atomic_xor.cpp
+cxx_test_shmem_atomic_swap_SOURCES = cxx_test_shmem_atomic_swap.cpp
+cxx_test_shmem_atomic_cswap_SOURCES = cxx_test_shmem_atomic_cswap.cpp
+cxx_test_shmem_wait_until_SOURCES = cxx_test_shmem_wait_until.cpp
+cxx_test_shmem_test_SOURCES = cxx_test_shmem_test.cpp

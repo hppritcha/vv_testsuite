@@ -5,6 +5,6 @@ ACLOCAL_AMFLAGS = -I config
 
 EXTRA_DIST = README NEWS
 
-SUBDIRS = cray uh
+SUBDIRS = cray uh sandia-shmem
 
 

@@ -89,5 +89,7 @@ AC_CONFIG_FILES([Makefile
                  uh/feature_tests/Fortran/transfer/Makefile
                  uh/performance_tests/Makefile
                  uh/performance_tests/micro_benchmarks/Makefile
+                 sandia-shmem/Makefile
+                 sandia-shmem/unit/Makefile
 ])
 AC_OUTPUT

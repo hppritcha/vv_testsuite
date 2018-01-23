@@ -294,6 +294,38 @@ check_PROGRAMS += \
 	uh/feature_tests/Fortran/alloc/test_shmem_shpalloc_03_logical \
 	uh/feature_tests/Fortran/alloc/test_shmem_shpalloc_03_real4 \
 	uh/feature_tests/Fortran/alloc/test_shmem_shpalloc_03_real8 \
+	uh/feature_tests/Fortran/atomic/test_shmem_add_01_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_add_01_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_add_02_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_add_02_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_add_03_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_add_03_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_cswap_01_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_cswap_01_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_cswap_02_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_cswap_02_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_cswap_03_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_cswap_03_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_fadd_01_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_fadd_01_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_finc_01_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_finc_01_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_finc_02_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_finc_02_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_finc_03_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_finc_03_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_inc_01_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_inc_01_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_inc_02_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_inc_02_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_inc_03_int4  \
+	uh/feature_tests/Fortran/atomic/test_shmem_inc_03_int8  \
+	uh/feature_tests/Fortran/atomic/test_shmem_swap_01_int4 \
+	uh/feature_tests/Fortran/atomic/test_shmem_swap_01_int8 \
+	uh/feature_tests/Fortran/atomic/test_shmem_swap_02_int4 \
+	uh/feature_tests/Fortran/atomic/test_shmem_swap_02_int8 \
+	uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int4 \
+	uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int8 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int4 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int8 \
 	uh/error_tests/Fortran/atomic/test_shmem_cswap_04_int4 \
@@ -511,6 +543,38 @@ uh_feature_tests_Fortran_alloc_test_shmem_shpalloc_03_int8_SOURCES = uh/feature_
 uh_feature_tests_Fortran_alloc_test_shmem_shpalloc_03_logical_SOURCES = uh/feature_tests/Fortran/alloc/test_shmem_shpalloc_03_logical.f90
 uh_feature_tests_Fortran_alloc_test_shmem_shpalloc_03_real4_SOURCES = uh/feature_tests/Fortran/alloc/test_shmem_shpalloc_03_real4.f90
 uh_feature_tests_Fortran_alloc_test_shmem_shpalloc_03_real8_SOURCES = uh/feature_tests/Fortran/alloc/test_shmem_shpalloc_03_real8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_add_01_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_add_01_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_add_01_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_add_01_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_cswap_01_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_cswap_01_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_cswap_01_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_cswap_01_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_fadd_01_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_fadd_01_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_fadd_01_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_fadd_01_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_finc_01_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_finc_01_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_finc_01_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_finc_01_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_inc_01_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_inc_01_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_inc_01_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_inc_01_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_swap_01_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_01_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_swap_01_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_01_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_add_02_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_add_02_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_add_02_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_add_02_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_cswap_02_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_cswap_02_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_cswap_02_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_cswap_02_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_finc_02_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_finc_02_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_finc_02_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_finc_02_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_inc_02_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_inc_02_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_inc_02_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_inc_02_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_swap_02_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_02_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_swap_02_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_02_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_add_03_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_add_03_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_add_03_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_add_03_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_cswap_03_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_cswap_03_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_cswap_03_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_cswap_03_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_finc_03_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_finc_03_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_finc_03_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_finc_03_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_inc_03_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_inc_03_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_inc_03_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_inc_03_int8.f90
+uh_feature_tests_Fortran_atomic_test_shmem_swap_03_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int4.f90
+uh_feature_tests_Fortran_atomic_test_shmem_swap_03_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int8.f90
 
 endif
 

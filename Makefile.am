@@ -5,6 +5,11 @@ ACLOCAL_AMFLAGS = -I config
 
 EXTRA_DIST = README NEWS
 
+BUILT_SOURCES=uh/feature_tests/Fortran/broadcast/alarm_glue.mod
+
+alarm_glue.mod: uh/feature_tests/Fortran/broadcast/alarm_glue.f90
+	$(FC) -c $<
+
 SUBDIRS =
 
 check_PROGRAMS = \
@@ -326,6 +331,41 @@ check_PROGRAMS += \
 	uh/feature_tests/Fortran/atomic/test_shmem_swap_02_int8 \
 	uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int4 \
 	uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_char \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_double \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_int4  \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_int8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_logical \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_real4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_real8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_char  \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_double \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_int4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_int8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_logical \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_real4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_real8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_char \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_double \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_int4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_int8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_logical \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_real4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_real8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_char \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_double \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_int4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_int8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_logical \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_real4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_real8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_char \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_double \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int8 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_logical \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real4 \
+	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real8 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int4 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int8 \
 	uh/error_tests/Fortran/atomic/test_shmem_cswap_04_int4 \
@@ -575,7 +615,41 @@ uh_feature_tests_Fortran_atomic_test_shmem_inc_03_int4_SOURCES = uh/feature_test
 uh_feature_tests_Fortran_atomic_test_shmem_inc_03_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_inc_03_int8.f90
 uh_feature_tests_Fortran_atomic_test_shmem_swap_03_int4_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int4.f90
 uh_feature_tests_Fortran_atomic_test_shmem_swap_03_int8_SOURCES = uh/feature_tests/Fortran/atomic/test_shmem_swap_03_int8.f90
-
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_01_char_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_char.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_01_double_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_double.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_01_int4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_int4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_01_int8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_int8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_01_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_logical.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_01_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_real4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_01_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_01_real8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_02_char_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_char.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_02_double_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_double.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_02_int4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_int4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_02_int8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_int8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_02_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_logical.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_02_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_real4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_02_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_02_real8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_03_char_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_char.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_03_double_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_double.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_03_int4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_int4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_03_int8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_int8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_03_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_logical.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_03_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_real4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_03_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_03_real8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_char_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_char.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_double_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_double.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_int4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_int4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_int8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_int8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_logical.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_real4.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_real8.f90
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_char_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_char.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_double_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_double.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_int4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int4.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_int8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int8.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_logical.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real4.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real8.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
 endif
 
 TESTS = $(check_PROGRAMS)

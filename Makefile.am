@@ -5,9 +5,10 @@ ACLOCAL_AMFLAGS = -I config
 
 EXTRA_DIST = README NEWS
 
-BUILT_SOURCES=uh/feature_tests/Fortran/broadcast/alarm_glue.mod
+BUILT_SOURCES = alarm_glue.mod
+CLEANFILES =*.mod
 
-alarm_glue.mod: uh/feature_tests/Fortran/broadcast/alarm_glue.f90
+alarm_glue.mod: test_utils/alarm_glue.f90
 	$(FC) -c $<
 
 SUBDIRS =
@@ -366,6 +367,22 @@ check_PROGRAMS += \
 	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_logical \
 	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real4 \
 	uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real8 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_01_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_01_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_02_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_02_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_03_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_03_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_04_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_04_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_01_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_01_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_02_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_02_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_03_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_03_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int8 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int4 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int8 \
 	uh/error_tests/Fortran/atomic/test_shmem_cswap_04_int4 \
@@ -471,7 +488,11 @@ XFAIL_TESTS += \
 	uh/error_tests/Fortran/transfer/test_shmem_put_05_double \
 	uh/error_tests/Fortran/transfer/test_shmem_put_05_int4 \
 	uh/error_tests/Fortran/transfer/test_shmem_put_05_logical \
-	uh/error_tests/Fortran/transfer/test_shmem_put_05_real4
+	uh/error_tests/Fortran/transfer/test_shmem_put_05_real4 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_04_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_collect_04_int8 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int4 \
+	uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int8
 
 uh_error_tests_Fortran_atomic_test_shmem_add_04_int4_SOURCES = uh/error_tests/Fortran/atomic/test_shmem_add_04_int4.f90
 uh_error_tests_Fortran_atomic_test_shmem_add_04_int8_SOURCES = uh/error_tests/Fortran/atomic/test_shmem_add_04_int8.f90
@@ -643,13 +664,30 @@ uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_int8_SOURCES = uh/fea
 uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_logical.f90
 uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_real4.f90
 uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_04_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_04_real8.f90
-uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_char_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_char.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
-uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_double_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_double.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
-uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_int4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int4.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
-uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_int8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int8.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
-uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_logical.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
-uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real4.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
-uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real8.f90 uh/feature_tests/Fortran/broadcast/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_char_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_char.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_double_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_double.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_int4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int4.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_int8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_int8.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_logical_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_logical.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_real4_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real4.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_broadcast_test_shmem_broadcast_05_real8_SOURCES = uh/feature_tests/Fortran/broadcast/test_shmem_broadcast_05_real8.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_collect_test_shmem_collect_01_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_01_int4.f90
+uh_feature_tests_Fortran_collect_test_shmem_collect_01_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_01_int8.f90
+uh_feature_tests_Fortran_collect_test_shmem_collect_02_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_02_int4.f90
+uh_feature_tests_Fortran_collect_test_shmem_collect_02_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_02_int8.f90
+uh_feature_tests_Fortran_collect_test_shmem_collect_03_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_03_int4.f90
+uh_feature_tests_Fortran_collect_test_shmem_collect_03_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_03_int8.f90
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_01_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_01_int4.f90
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_01_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_01_int8.f90
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_02_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_02_int4.f90
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_02_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_02_int8.f90
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_03_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_03_int4.f90
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_03_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_03_int8.f90
+uh_feature_tests_Fortran_collect_test_shmem_collect_04_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_04_int4.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_collect_test_shmem_collect_04_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_04_int8.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_04_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int4.f90 test_utils/alarm_it.c alarm_glue.mod
+uh_feature_tests_Fortran_collect_test_shmem_fcollect_04_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int8.f90 test_utils/alarm_it.c alarm_glue.mod
+
 endif
 
 TESTS = $(check_PROGRAMS)

@@ -383,6 +383,28 @@ check_PROGRAMS += \
 	uh/feature_tests/Fortran/collect/test_shmem_fcollect_03_int8 \
 	uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int4 \
 	uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_and_01_int4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_and_01_int8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_max_01_int4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_max_01_int8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_max_01_real4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_max_01_real8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_min_01_int4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_min_01_int8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_min_01_real4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_min_01_real8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_or_01_int4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_or_01_int8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_prod_01_int4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_prod_01_int8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_prod_01_real4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_prod_01_real8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_sum_01_int4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_sum_01_int8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_sum_01_real4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_sum_01_real8 \
+	uh/feature_tests/Fortran/reductions/test_shmem_xor_01_int4 \
+	uh/feature_tests/Fortran/reductions/test_shmem_xor_01_int8 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int4 \
 	uh/error_tests/Fortran/atomic/test_shmem_add_04_int8 \
 	uh/error_tests/Fortran/atomic/test_shmem_cswap_04_int4 \
@@ -687,7 +709,28 @@ uh_feature_tests_Fortran_collect_test_shmem_collect_04_int4_SOURCES = uh/feature
 uh_feature_tests_Fortran_collect_test_shmem_collect_04_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_collect_04_int8.f90 test_utils/alarm_it.c alarm_glue.mod
 uh_feature_tests_Fortran_collect_test_shmem_fcollect_04_int4_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int4.f90 test_utils/alarm_it.c alarm_glue.mod
 uh_feature_tests_Fortran_collect_test_shmem_fcollect_04_int8_SOURCES = uh/feature_tests/Fortran/collect/test_shmem_fcollect_04_int8.f90 test_utils/alarm_it.c alarm_glue.mod
-
+uh_feature_tests_Fortran_reductions_test_shmem_and_01_int4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_and_01_int4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_and_01_int8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_and_01_int8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_max_01_int4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_max_01_int4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_max_01_int8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_max_01_int8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_max_01_real4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_max_01_real4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_max_01_real8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_max_01_real8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_min_01_int4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_min_01_int4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_min_01_int8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_min_01_int8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_min_01_real4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_min_01_real4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_min_01_real8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_min_01_real8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_or_01_int4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_or_01_int4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_or_01_int8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_or_01_int8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_prod_01_int4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_prod_01_int4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_prod_01_int8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_prod_01_int8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_prod_01_real4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_prod_01_real4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_prod_01_real8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_prod_01_real8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_sum_01_int4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_sum_01_int4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_sum_01_int8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_sum_01_int8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_sum_01_real4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_sum_01_real4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_sum_01_real8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_sum_01_real8.f90
+uh_feature_tests_Fortran_reductions_test_shmem_xor_01_int4_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_xor_01_int4.f90
+uh_feature_tests_Fortran_reductions_test_shmem_xor_01_int8_SOURCES = uh/feature_tests/Fortran/reductions/test_shmem_xor_01_int8.f90
 endif
 
 TESTS = $(check_PROGRAMS)

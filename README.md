@@ -21,6 +21,11 @@ test suite which can be used for
 Need to set the SHMEM_ABORT_ON_ERROR environment variable to avoid hangs with some
 of the Univ. Houston error checking tests.
 
+The Cray SHMEM cannot be used to compile the UH unit tests, so one has to add --disable-fortran
+to the configure line when testing Cray SHMEM.  This is due to lack of agreement in the
+OpenSHMEM community about the contents of shmem.fh.
+
+
 ### Open MPI (OSHMEM)
 
 The following tests currently either hang or abort when using the OSHMEM implementation

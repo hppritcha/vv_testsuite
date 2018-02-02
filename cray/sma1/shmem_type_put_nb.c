@@ -43,10 +43,15 @@
 ! Notes:  If type longdouble is available, compile with -DHAVE_LONG_DOUBLE
 !
 !*********************************************************************/
+#include "config.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpp/shmem.h>
-#include "config.h"
+
+#if HAVE_MPP_SHMEMX_H
+#include <mpp/shmemx.h>
+#endif
+
 
 #define MAX_SIZE 100
 
